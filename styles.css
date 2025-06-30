@@ -49,10 +49,10 @@ body {
 
 .cards-container {
     margin-top: 2em;
-    /* height: 180px; */
     justify-content: space-around;
     flex-direction: column;
     flex-wrap: wrap;
+    gap: 1em;
     
 }
 /*
@@ -75,7 +75,9 @@ body {
     margin-right: 1em; */
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
 }
 
 .card-header {
