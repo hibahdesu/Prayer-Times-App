@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +13,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
+    font-family: "Tajawal", sans-serif;
 }
 
 .center {
@@ -76,8 +79,11 @@ body {
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 0;
-    padding: 0;
+    padding: .5em 2em;
+    background: rgb(144, 117, 117);
+    border-radius: 4em;
 }
 
 .card-header {
