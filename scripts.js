@@ -94,7 +94,7 @@ function getPrayingTimesByCity(cityName = "Makkah", date = formattedDate) {
 
       for (let [name, time] of Object.entries(timings)) {
         cardsContainer.innerHTML += `
-          <div class="card" id=${name}>
+          <div class="card flex" id=${name}>
             <div class="card-header">
               <h1>${name}</h1>
             </div>
