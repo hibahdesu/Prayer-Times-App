@@ -1,100 +1,78 @@
-let url = "https://api.aladhan.com/v1/timingsByCity";
-
 let cardsContainer = document.querySelector('.cards-container');
-let dateContent = document.querySelector('.date');
 let cityContainer = document.getElementById('city');
 let header = document.getElementById('header');
-let dateElement = document.querySelector('.date');
+let dateElement = document.querySelector('.date-m');
+let dateElementH = document.querySelector('.date-h');
+let day = document.querySelector('.day');
 let datePicker = document.getElementById('datePicker');
 
 let today = new Date();
 let formattedDate = today.toISOString().split('T')[0];
-
 datePicker.value = formattedDate;
 
-console.log(formattedDate); 
-
-
 let cities = [
-  { name: "Makkah" },
-  { name: "Taif" },
-  { name: "Jeddah" },
-  { name: "Riyadh" },
-  { name: "Dammam" },
-  { name: "Medina" },
-  { name: "Khobar" },
-  { name: "Tabuk" },
-  { name: "Abha" },
-  { name: "Najran" },
-  { name: "Al Hofuf" },
-  { name: "Hail" },
-  { name: "Jizan" },
-  { name: "Buraidah" },
-  { name: "Al Qatif" },
-  { name: "Al Jubail" },
-  { name: "Yanbu" },
-  { name: "Al Kharj" },
-  { name: "Sakaka" },
-  { name: "Arar" },
-  { name: "Al Bahah" },
-  { name: "Al Mubarraz" },
-  { name: "Dhahran" },
-  { name: "Rabigh" },
-  { name: "Unaizah" },
-  { name: "Al Qurayyat" },
-  { name: "Turabah" },
-  { name: "Ras Tanura" },
-  { name: "Wadi Al Dawasir" },
-  { name: "Zulfi" }
+  { name: "Makkah", lat: 21.3891, lng: 39.8579 },
+  { name: "Taif", lat: 21.4373, lng: 40.5127 },
+  { name: "Jeddah", lat: 21.4858, lng: 39.1925 },
+  { name: "Riyadh", lat: 24.7136, lng: 46.6753 },
+  { name: "Dammam", lat: 26.4207, lng: 50.0888 },
+  { name: "Medina", lat: 24.5247, lng: 39.5692 }
+  // You can add more cities with lat/lng if needed
 ];
 
-
-for (let cityObj of cities) {
-  const content = `
-    <option value="${cityObj.name}">${cityObj.name}</option>
-  `;
-  // console.log(content);
-  cityContainer.innerHTML += content;
-  
-  // console.log(city);
-}
+// Populate dropdown
+cities.forEach(city => {
+  cityContainer.innerHTML += `<option value="${city.name}">${city.name}</option>`;
+});
 
 let selectedCity = "Makkah";
 let selectedDate = formattedDate;
 
-
+// Event: City change
 cityContainer.addEventListener('change', () => {
   selectedCity = cityContainer.value;
   selectedDate = datePicker.value;
-
   header.innerHTML = selectedCity;
-  getPrayingTimesByCity(selectedCity, selectedDate);
+  getPrayingTimes(selectedCity, selectedDate);
 });
 
+// Event: Date change
 datePicker.addEventListener('change', () => {
   selectedDate = datePicker.value;
-  dateElement.innerHTML = selectedDate;
-  getPrayingTimesByCity(selectedCity, selectedDate);
+  selectedCity = cityContainer.value;
+  header.innerHTML = selectedCity;
+  getPrayingTimes(selectedCity, selectedDate);
 });
 
-function getPrayingTimesByCity(cityName = "Makkah", date = formattedDate) {
-  const urlWithDate = `https://api.aladhan.com/v1/timingsByCity/${date}`;
+// ✅ Get prayer times by city name and date
+function getPrayingTimes(cityName, date) {
+  const city = cities.find(c => c.name === cityName);
+  if (!city) {
+    console.error("City not found!");
+    return;
+  }
+
+  const timestamp = Math.floor(new Date(date).getTime() / 1000); // Unix timestamp
+
+  const url = `https://api.aladhan.com/v1/timings/${timestamp}`;
   const params = {
-    city: cityName,
-    country: "SA",
+    latitude: city.lat,
+    longitude: city.lng,
     method: 4
   };
 
-  dateElement.innerHTML = `<p>${date}</p>`;
+  axios.get(url, { params })
+    .then(response => {
+      const data = response.data.data;
 
-  axios.get(urlWithDate, { params: params })
-    .then((response) => {
-      const timings = response.data.data.timings;
-      cardsContainer.innerHTML = "";
+      dateElement.innerHTML = `<p>${data.date.gregorian.date}</p>`;
+      dateElementH.innerHTML = `<p>${data.date.hijri.date}</p>`;
+      day.innerHTML = `<p>${data.date.hijri.weekday.en}</p>`;
 
-      for (let [name, time] of Object.entries(timings)) {
+      cardsContainer.innerHTML = '';
+      for (const [name, time] of Object.entries(data.timings)) {
         cardsContainer.innerHTML += `
-          <div class="card flex" id=${name}>
+          <div class="card flex" id="${name}">
             <div class="card-header">
               <h1>${name}</h1>
             </div>
@@ -105,21 +83,15 @@ function getPrayingTimesByCity(cityName = "Makkah", date = formattedDate) {
         `;
       }
     })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+    .catch(err => console.error("API error:", err));
 }
 
-
-// Load Makkah prayer timings on page load
+// Initial Load
 window.addEventListener('DOMContentLoaded', () => {
   selectedCity = "Makkah";
   selectedDate = formattedDate;
   cityContainer.value = selectedCity;
   datePicker.value = selectedDate;
   header.innerHTML = selectedCity;
-  getPrayingTimesByCity(selectedCity, selectedDate);
+  getPrayingTimes(selectedCity, selectedDate);
 });
-
-
-
