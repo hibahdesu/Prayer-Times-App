@@ -9,6 +9,12 @@ let day = document.querySelector('.day-h');
 let dayM = document.querySelector('.day-m');
 let datePicker = document.getElementById('datePicker');
 
+const toggleBtn = document.getElementById('toggleNav');
+const navSelection = document.querySelector('.nav-selection');
+
+
+
+
 let today = new Date();
 let formattedDate = today.toISOString().split('T')[0];
 datePicker.value = formattedDate;
@@ -98,6 +104,17 @@ function getPrayingTimes(cityName, date) {
     })
     .catch(err => console.error("API error:", err));
 }
+
+toggleBtn.addEventListener('click', () => {
+  navSelection.style.display = 
+    navSelection.style.display === 'flex' ? 'none' : 'flex';
+});
+
+// Remove animation after first click
+toggleBtn.addEventListener('click', () => {
+  toggleBtn.classList.remove('pulse');
+});
+
 
 // Initial Load
 window.addEventListener('DOMContentLoaded', () => {
