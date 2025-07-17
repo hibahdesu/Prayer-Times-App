@@ -67,8 +67,9 @@ function dateNow() {
   let hours = now.getHours().toString().padStart(2, '0');
   let minutes = now.getMinutes().toString().padStart(2, '0');
   let seconds = now.getSeconds().toString().padStart(2, '0');
-  let fullTime = `${hours}:${minutes}:${seconds}`;
-
+  let ampm = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12 || 12; // convert 0 to 12
+  let fullTime =`${hours}:${minutes}:${seconds} ${ampm}`;
   time.innerHTML = fullTime;
 }
 
