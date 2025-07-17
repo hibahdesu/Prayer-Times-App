@@ -108,6 +108,7 @@ function getPrayingTimes(cityName, date) {
 toggleBtn.addEventListener('click', () => {
   navSelection.style.display = 
     navSelection.style.display === 'flex' ? 'none' : 'flex';
+    document.body.classList.add('modal-open');
 });
 
 // Remove animation after first click
