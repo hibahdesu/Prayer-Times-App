@@ -18,7 +18,7 @@ body {
     background: url('./images/makkah2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-family: "Noto Sans", sans-serif;
     position: relative;
 }
@@ -224,7 +224,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   100% { transform: scale(1); opacity: 0.8; }
 }
 
-.toggle-button.pulse {
+.nav-toggle.pulse {
   animation: pulse 2s infinite;
 }
 
@@ -232,14 +232,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: 200px;
     font-size: 1.2em;
     padding: 0.4em;
-    padding-right: 2.5em; /* space for the arrow */
+    padding-right: 2.5em; 
     border-radius: 0.5em;
     background-color: transparent;
     color: var(--primary-color);
     border: 1px solid var(--secondary-color);
     outline: none;
     cursor: pointer;
-    appearance: none; /* Remove default arrow */
+    appearance: none; 
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='white' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
