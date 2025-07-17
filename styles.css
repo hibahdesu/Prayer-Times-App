@@ -55,7 +55,7 @@ body {
     text-align: center;
 }
 
-.date-container {
+.date-container, .day-container {
     display: flex;
     justify-content: space-between;
     align-items: center;

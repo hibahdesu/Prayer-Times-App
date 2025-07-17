@@ -75,10 +75,12 @@ function getPrayingTimes(cityName, date) {
   axios.get(url, { params })
     .then(response => {
       const data = response.data.data;
+      console.log(data);
 
       dateElement.innerHTML = `<p>${data.date.gregorian.date}</p>`;
       dateElementH.innerHTML = `<p>${data.date.hijri.date}</p>`;
       day.innerHTML = `<p>${data.date.hijri.weekday.en}</p>`;
+      dayM.innerHTML = `<p>${data.date.gregorian.weekday.en}</p>`
 
       cardsContainer.innerHTML = '';
       for (const [name, time] of Object.entries(data.timings)) {
