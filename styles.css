@@ -256,6 +256,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-color: var(--secondary-color);
 }
 
+.time {
+    font-size: 3rem;
+}
 @media (min-width: 800px) {
     .cards-container {
     flex-direction: row;

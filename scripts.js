@@ -62,6 +62,22 @@ datePicker.addEventListener('change', () => {
   getPrayingTimes(selectedCity, selectedDate);
 });
 
+function dateNow() {
+  let now = new Date();
+  let hours = now.getHours().toString().padStart(2, '0');
+  let minutes = now.getMinutes().toString().padStart(2, '0');
+  let seconds = now.getSeconds().toString().padStart(2, '0');
+  let fullTime = `${hours}:${minutes}:${seconds}`;
+
+  time.innerHTML = fullTime;
+
+  console.log(fullTime);
+}
+
+setInterval(dateNow, 1000); 
+dateNow();
+// console.log(dateNow());
+
 // ✅ Get prayer times by city name and date
 function getPrayingTimes(cityName, date) {
   const city = cities.find(c => c.name === cityName);
@@ -85,6 +101,7 @@ function getPrayingTimes(cityName, date) {
       console.log(data);
 
       dateElement.innerHTML = `<p>${data.date.gregorian.date}</p>`;
+      // time.innerHTML = `<p>${dateNow()}</p>`
       dateElementH.innerHTML = `<p>${data.date.hijri.date}</p>`;
       day.innerHTML = `<p>${data.date.hijri.weekday.en}</p>`;
       dayM.innerHTML = `<p>${data.date.gregorian.weekday.en}</p>`
