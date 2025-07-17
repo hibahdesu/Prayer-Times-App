@@ -8,6 +8,7 @@ let dateElementH = document.querySelector('.date-h');
 let day = document.querySelector('.day-h');
 let dayM = document.querySelector('.day-m');
 let datePicker = document.getElementById('datePicker');
+let time = document.querySelector('.time');
 
 
 const toggleBtn = document.querySelector('.nav-toggle');
