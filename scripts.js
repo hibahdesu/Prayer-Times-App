@@ -23,11 +23,18 @@ datePicker.value = formattedDate;
 let cities = [
   { name: "Makkah", lat: 21.3891, lng: 39.8579, image: './images/makkah2.jpg' },
   { name: "Taif", lat: 21.4373, lng: 40.5127, image: './images/taif.jpg' },
-  { name: "Jeddah", lat: 21.4858, lng: 39.1925, image: './images/jeddah.jpg'},
+  { name: "Jeddah", lat: 21.4858, lng: 39.1925, image: './images/jeddah.jpg' },
   { name: "Riyadh", lat: 24.7136, lng: 46.6753, image: './images/Riyadh.jpg' },
-  { name: "Dammam", lat: 26.4207, lng: 50.0888, image: './images/Dammam.jpg' },
-  { name: "Medina", lat: 24.5247, lng: 39.5692, image: './images/Medina.jpg' }
+  { name: "Dammam", lat: 26.4207, lng: 50.0888, image: './images/damm.jpg' },
+  { name: "Medina", lat: 24.5247, lng: 39.5692, image: './images/Medina.jpg' },
+  { name: "Abha", lat: 18.2465, lng: 42.5117, image: './images/Abha.jpg' },
+  { name: "Tabuk", lat: 28.3838, lng: 36.5550, image: './images/Tabuk.jpg' },
+  { name: "Hail", lat: 27.5114, lng: 41.7208, image: './images/Hail.jpg' },
+  { name: "Al Khobar", lat: 26.2794, lng: 50.2084, image: './images/Khobar.jpg' },
+  { name: "Najran", lat: 17.5653, lng: 44.2289, image: './images/Najran.jpg' },
+  { name: "Al Baha", lat: 20.0129, lng: 41.4677, image: './images/Baha.jpg' }
 ];
+
 
 // Populate dropdown
 cities.forEach(city => {
