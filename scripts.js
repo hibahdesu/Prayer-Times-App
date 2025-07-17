@@ -100,7 +100,6 @@ function getPrayingTimes(cityName, date) {
       console.log(data);
 
       dateElement.innerHTML = `<p>${data.date.gregorian.date}</p>`;
-      // time.innerHTML = `<p>${dateNow()}</p>`
       dateElementH.innerHTML = `<p>${data.date.hijri.date}</p>`;
       day.innerHTML = `<p>${data.date.hijri.weekday.en}</p>`;
       dayM.innerHTML = `<p>${data.date.gregorian.weekday.en}</p>`
