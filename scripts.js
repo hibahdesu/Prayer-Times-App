@@ -9,8 +9,10 @@ let day = document.querySelector('.day-h');
 let dayM = document.querySelector('.day-m');
 let datePicker = document.getElementById('datePicker');
 
+
 const toggleBtn = document.getElementById('toggleNav');
 const navSelection = document.querySelector('.nav-selection');
+let closeBtn = document.querySelector('.close-btn ');
 
 
 
@@ -113,6 +115,11 @@ toggleBtn.addEventListener('click', () => {
   toggleBtn.classList.remove('pulse');
 });
 
+closeBtn.addEventListener('click', () => {
+  navSelection.classList.add('hidden');
+  document.body.classList.remove('modal-open');
+  toggleBtn.classList.add('pulse');
+})
 
 
 // Initial Load

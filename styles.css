@@ -31,7 +31,7 @@ body.modal-open::before {
     width: 100%;
     height: 100%;
     background: rgba(33, 53, 85, 0.4);
-    z-index: 999;
+    z-index: 99;
 }
 
 .center {
@@ -105,7 +105,7 @@ body.modal-open::before {
     font-size: 2rem;
 }
 
-.card-body  h1 {
+.card-body h1 {
     font-weight: 400;
     font-size: 1.5rem;
 }
@@ -124,7 +124,7 @@ body.modal-open::before {
     backdrop-filter: blur(10px);
     border-radius: 1em;
     padding: 2em;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--secondary-color);
     transition: all 0.3s ease-in-out;
     position: fixed;
     z-index: 1000;
@@ -137,11 +137,21 @@ body.modal-open::before {
     position: absolute;
     top: 5%;
     right: 2%;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+.close-btn:hover {
+    color: var(--secondary-color);
 }
 
 .toggle-button {
     background: rgba(255, 255, 255, 0.3);
-    color: white;
+    color: var(--primary-color);
     border: none;
     border-radius: 0.5em;
     padding: 0.5em 1em;
@@ -154,6 +164,43 @@ body.modal-open::before {
     background: rgba(255, 255, 255, 0.5);
 }
 
+/* Style the date picker */
+.date-picker {
+    width: 200px;
+    font-size: 1.2em;
+    padding: 0.4em;
+    border-radius: 0.5em;
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    outline: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg fill='white' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7em center;
+    background-size: 1em;
+}
+
+/* On focus - inverted theme for typing */
+.date-picker:focus {
+    /* background-color: ; */
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* Additional spacing inside the modal */
+.nav-selection select,
+.nav-selection input[type="date"] {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* make the icon white */
+    cursor: pointer;
+}
+
+
 @keyframes pulse {
   0% { transform: scale(1); opacity: 0.8; }
   50% { transform: scale(1.1); opacity: 1; }
@@ -164,7 +211,6 @@ body.modal-open::before {
   animation: pulse 2s infinite;
 }
 
-
 .city {
     width: 200px;
     font-size: 1.2em;
@@ -173,7 +219,7 @@ body.modal-open::before {
     border-radius: 0.5em;
     background-color: transparent;
     color: var(--secondary-color);
-    border: 1px solid white;
+    border: 1px solid var(--secondary-color);
     outline: none;
     cursor: pointer;
     appearance: none; /* Remove default arrow */
@@ -188,9 +234,9 @@ body.modal-open::before {
 
 /* When the select menu is clicked or focused */
 .city:focus {
-    background-color: white;
-    color: black;
-    border-color: #ccc;
+    /* background-color: var(--primary-color); */
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
 }
 
 @media (min-width: 800px) {
