@@ -17,7 +17,6 @@ let cities = [
   { name: "Riyadh", lat: 24.7136, lng: 46.6753 },
   { name: "Dammam", lat: 26.4207, lng: 50.0888 },
   { name: "Medina", lat: 24.5247, lng: 39.5692 }
-  // You can add more cities with lat/lng if needed
 ];
 
 // Populate dropdown

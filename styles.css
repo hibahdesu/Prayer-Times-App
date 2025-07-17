@@ -54,15 +54,17 @@ body {
     justify-content: space-around;
     flex-direction: column;
     gap: 1em;
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-    backdrop-filter: blur(10px);          /* Frosted glass blur */
-    -webkit-backdrop-filter: blur(10px);  /* Safari support */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Soft border */
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px);          
+    -webkit-backdrop-filter: blur(10px);  
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 1em;
     padding: 1em;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
     transition: all 0.3s ease;
 }
+
+
 /*
 <div class="card" id=${name}>
             <div class="card-header">
@@ -115,7 +117,7 @@ body {
     -moz-appearance: none;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='white' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 0.7em center; /* position arrow near right border */
+    background-position: right 0.7em center;
     background-size: 1em;
 }
 
