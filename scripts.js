@@ -1,3 +1,5 @@
+let body = document.querySelector('body');
+console.log(body);
 let cardsContainer = document.querySelector('.cards-container');
 let cityContainer = document.getElementById('city');
 let header = document.getElementById('header');
@@ -11,17 +13,18 @@ let formattedDate = today.toISOString().split('T')[0];
 datePicker.value = formattedDate;
 
 let cities = [
-  { name: "Makkah", lat: 21.3891, lng: 39.8579 },
-  { name: "Taif", lat: 21.4373, lng: 40.5127 },
-  { name: "Jeddah", lat: 21.4858, lng: 39.1925 },
-  { name: "Riyadh", lat: 24.7136, lng: 46.6753 },
-  { name: "Dammam", lat: 26.4207, lng: 50.0888 },
-  { name: "Medina", lat: 24.5247, lng: 39.5692 }
+  { name: "Makkah", lat: 21.3891, lng: 39.8579, image: './images/makkah.jpg' },
+  { name: "Taif", lat: 21.4373, lng: 40.5127, image: './images/taif.jpg' },
+  { name: "Jeddah", lat: 21.4858, lng: 39.1925, image: './images/jeddah.jpg'},
+  { name: "Riyadh", lat: 24.7136, lng: 46.6753, image: './images/Riyadh.jpg' },
+  { name: "Dammam", lat: 26.4207, lng: 50.0888, image: './images/Dammam.jpg' },
+  { name: "Medina", lat: 24.5247, lng: 39.5692, image: './images/Medina.jpg' }
 ];
 
 // Populate dropdown
 cities.forEach(city => {
   cityContainer.innerHTML += `<option value="${city.name}">${city.name}</option>`;
+  // body.style.background = `url(${city.image})`;
 });
 
 let selectedCity = "Makkah";
@@ -33,6 +36,14 @@ cityContainer.addEventListener('change', () => {
   selectedDate = datePicker.value;
   header.innerHTML = selectedCity;
   getPrayingTimes(selectedCity, selectedDate);
+
+  const city = cities.find(c => c.name === selectedCity);
+  if (city) {
+    body.style.background = `url(${city.image})`;
+    body.style.backgroundSize = 'cover';        
+    body.style.backgroundPosition = 'center';   
+    body.style.backgroundRepeat = 'no-repeat';  
+  }
 });
 
 // Event: Date change
