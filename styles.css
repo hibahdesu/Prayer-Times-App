@@ -48,6 +48,9 @@ body.modal-open::before {
     padding: 1em 1.5em;
 }
 
+.container {
+    margin: 1em 2em;
+}
 .header-container {
     margin-top: 2em;
     justify-content: space-around;
@@ -152,13 +155,14 @@ body.modal-open::before {
 
 .toggle-button {
     background: rgba(255, 255, 255, 0.3);
-    color: var(--primary-color);
+    color: var(--secondary-color);
     border: none;
     border-radius: 0.5em;
     padding: 0.5em 1em;
     font-size: 1em;
     cursor: pointer;
     transition: background 0.3s;
+    gap: .5em;
 }
 
 .toggle-button:hover {
@@ -172,7 +176,7 @@ body.modal-open::before {
     padding: 0.4em;
     border-radius: 0.5em;
     background-color: transparent;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     border: 1px solid var(--secondary-color);
     outline: none;
     cursor: pointer;
@@ -192,6 +196,7 @@ body.modal-open::before {
 /* Additional spacing inside the modal */
 .nav-selection select,
 .nav-selection input[type="date"] {
+    display: block;
     margin-top: 1em;
     margin-bottom: 1em;
 }
@@ -219,7 +224,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding-right: 2.5em; /* space for the arrow */
     border-radius: 0.5em;
     background-color: transparent;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     border: 1px solid var(--secondary-color);
     outline: none;
     cursor: pointer;

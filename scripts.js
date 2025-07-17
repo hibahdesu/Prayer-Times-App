@@ -10,11 +10,9 @@ let dayM = document.querySelector('.day-m');
 let datePicker = document.getElementById('datePicker');
 
 
-const toggleBtn = document.getElementById('toggleNav');
+const toggleBtn = document.querySelector('.nav-toggle');
 const navSelection = document.querySelector('.nav-selection');
 let closeBtn = document.querySelector('.close-btn ');
-
-
 
 
 let today = new Date();
