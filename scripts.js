@@ -70,13 +70,11 @@ function dateNow() {
   let fullTime = `${hours}:${minutes}:${seconds}`;
 
   time.innerHTML = fullTime;
-
-  console.log(fullTime);
 }
 
 setInterval(dateNow, 1000); 
 dateNow();
-// console.log(dateNow());
+
 
 // ✅ Get prayer times by city name and date
 function getPrayingTimes(cityName, date) {

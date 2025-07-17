@@ -4,7 +4,6 @@
 :root {
     --primary-color: #fff;
     --secondary-color: #0B1D51;
-    --third-color: #0B1D51;
 }
 
 * {
@@ -41,7 +40,7 @@ body.modal-open::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(33, 53, 85, 0.4);
+    background: rgba(0, 0, 0, 0.7);
     z-index: 99;
 }
 
@@ -166,7 +165,7 @@ body.modal-open::before {
 
 .toggle-button {
     background: rgba(255, 255, 255, 0.3);
-    color: var(--secondary-color);
+    color: var(--primary-color);
     border: none;
     border-radius: 0.5em;
     padding: 0.5em 1em;
