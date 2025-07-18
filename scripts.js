@@ -1,5 +1,4 @@
 let body = document.querySelector('body');
-console.log(body);
 let cardsContainer = document.querySelector('.cards-container');
 let cityContainer = document.getElementById('city');
 let header = document.getElementById('header');
@@ -104,7 +103,7 @@ function getPrayingTimes(cityName, date) {
   axios.get(url, { params })
     .then(response => {
       const data = response.data.data;
-      console.log(data);
+      // console.log(data);
 
       dateElement.innerHTML = `<p>${data.date.gregorian.date}</p>`;
       dateElementH.innerHTML = `<p>${data.date.hijri.date}</p>`;
