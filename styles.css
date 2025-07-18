@@ -250,9 +250,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background-position: right 0.7em center;
     background-size: 1em;
 }
-
-
-/* When the select menu is clicked or focused */
 .city:focus {
     /* background-color: var(--primary-color); */
     color: var(--secondary-color);
@@ -262,7 +259,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .time {
     font-size: 3rem;
 }
-@media (min-width: 800px) {
+
+.hidden {
+    display: none;
+}
+@media (min-width: 850px) {
     .cards-container {
     flex-direction: row;
     flex-wrap: wrap;
@@ -273,6 +274,44 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
-.hidden {
-    display: none;
+@media (max-width: 500px) {
+    body {
+        font-size: 0.9rem;
+        padding: 0.5em;
+    }
+
+    .wrapper,
+    .container,
+    .header-container,
+    .cards-container,
+    .card,
+    .nav-selection {
+        padding: 0.5em 1em;
+    }
+
+    .card-header h1, .card-body h1 {
+        font-size: 1.2rem;
+    }
+
+    .time {
+        font-size: 2rem;
+    }
+
+    .city,
+    .date-picker {
+        font-size: 1em;
+        padding: 0.4em;
+    }
+
+    .toggle-button,
+    .close-btn {
+        font-size: 0.9em;
+        padding: 0.4em 0.8em;
+    }
+
+    .nav-selection {
+        width: 90%;
+        padding: 1em;
+    }
 }
+
