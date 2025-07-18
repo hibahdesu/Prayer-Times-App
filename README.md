@@ -79,7 +79,6 @@ git clone https://github.com/your-username/prayer-times-app.git
 | ------------------------------------- | ----------------------------------- |
 | ![desktop](./images/demo-desktop.png) | ![mobile](./images/demo-mobile.png) |
 
-*(Add your screenshots to the `images/` folder and update the paths here.)*
 
 ---
 
