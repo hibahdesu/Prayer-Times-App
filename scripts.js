@@ -21,7 +21,7 @@ let formattedDate = today.toISOString().split('T')[0];
 datePicker.value = formattedDate;
 
 let cities = [
-  { name: "Makkah", lat: 21.3891, lng: 39.8579, image: './images/makkah2.jpg' },
+  { name: "Makkah", lat: 21.3891, lng: 39.8579, image: './images/mecca.jpg' },
   { name: "Taif", lat: 21.4373, lng: 40.5127, image: './images/taif.jpg' },
   { name: "Jeddah", lat: 21.4858, lng: 39.1925, image: './images/jeddah.jpg' },
   { name: "Riyadh", lat: 24.7136, lng: 46.6753, image: './images/Riyadh.jpg' },
