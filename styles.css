@@ -17,7 +17,7 @@
 
 body {
     /* background-color: linear-gradient(135deg, #f18383, #000); */
-    background: url('./images/makkah2.jpg');
+    background: url('./images/mecca.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     color: var(--primary-color);
