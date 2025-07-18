@@ -1,7 +1,3 @@
-Here's a clean and clear `README.md` file for your **Prayer Times App** project. This explains the purpose, features, setup, and structure of your codebase:
-
----
-
 ## 🕌 Prayer Times App
 
 A responsive web application that allows users to view daily Islamic prayer times for cities in Saudi Arabia. Users can select a city and date to see accurate prayer schedules based on location and the chosen day.
