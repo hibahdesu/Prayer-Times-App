@@ -234,7 +234,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .city {
     width: 200px;
     font-size: 1.2em;
-    padding: 0.4em;
+    padding: 0.5em;
     padding-right: 2.5em; 
     border-radius: 0.5em;
     background-color: transparent;
